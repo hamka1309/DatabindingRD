@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DatabindingRD</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+
+    <string name="label_not_robot">I\'m not robot</string>
+</resources>

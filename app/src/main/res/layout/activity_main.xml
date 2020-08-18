@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="account"
+            type="com.hadtt.model.User" />
+
+        <variable
+            name="handlers"
+            type="com.hadtt.MyClickHandlers" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="User name"
+            android:maxLength="24"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@{account.userName}"
+            android:textColorHint="@color/color_text_hint"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="@string/password"
+            android:maxLength="24"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@={account.password}"
+            android:textColorHint="@color/color_text_hint"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:checked="@{account.password.length()>13? true:false}"
+            android:paddingLeft="24dp"
+            android:text="@string/label_not_robot"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="#E37F7F"
+            android:onClick="@{()->handlers.onClicked(account)}"
+            android:padding="16dp"
+            android:text="Login"
+            android:textSize="16sp" />
+    </LinearLayout>
+</layout>
