@@ -8,6 +8,7 @@ import com.hadtt.BR;
 public class User extends BaseObservable {
     private String userName;
     private String password;
+    private boolean check;
 
     public User(String userName, String password) {
         this.userName = userName;
@@ -33,5 +34,15 @@ public class User extends BaseObservable {
         this.password = password;
         notifyPropertyChanged(BR.password);
 
+    }
+
+    @Bindable
+    public boolean isCheck() {
+        return check;
+    }
+
+    public void setCheck(boolean check) {
+        this.check = check;
+        notifyPropertyChanged(BR.check);
     }
 }
